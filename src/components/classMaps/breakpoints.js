@@ -19,9 +19,14 @@ const BREAKPOINT_NAMES = [
     'large'
 ];
 
-const breakpointPropType = PropTypes.oneOf(BREAKPOINT_NAMES);
+const breakpointPropType = {
+    notSmall: PropTypes.object,
+    medium: PropTypes.object,
+    large: PropTypes.object
+};
 
 export {
+    BREAKPOINT_NAMES,
     breakpointSuffix,
     breakpointPropType
 };
