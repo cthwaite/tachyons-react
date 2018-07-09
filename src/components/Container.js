@@ -16,7 +16,9 @@ export default class Container extends Component {
             className
         );
         return (
-            <div className={classes}>{children}</div>
+            <div className={classes}>
+                {children}
+            </div>
         );
     }
 }
