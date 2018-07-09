@@ -1,5 +1,5 @@
 import { borderClass } from './borders';
-import { clearFixClass } from './clearFix';
+import { clearFixClass, clearClass } from './clear';
 import { colorClass, bgColorClass } from './colors';
 import { floatClass } from './floats';
 import { fontFamilyClass } from './fontFamily';
@@ -22,6 +22,7 @@ const buildPropToClassMap = mappers => breakpointSuffix => context => {
 const PROP_TO_CLASS_DEFAULTS = [
     bgColorClass,
     borderClass,
+    clearClass,
     clearFixClass,
     colorClass,
     floatClass,
