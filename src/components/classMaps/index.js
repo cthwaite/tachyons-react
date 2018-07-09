@@ -19,12 +19,15 @@ const buildPropToClassMap = mappers => breakpointSuffix => context => {
     return mappers.map(mapFunc => mapFunc(context, breakpointSuffix));
 };
 
+const debugClass = ({debug}) => debug ? 'debug' : null;
+
 const PROP_TO_CLASS_DEFAULTS = [
     bgColorClass,
     borderClass,
     clearClass,
     clearFixClass,
     colorClass,
+    debugClass,
     floatClass,
     fontFamilyClass,
     fontSizeClass,
