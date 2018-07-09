@@ -2,30 +2,19 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 
 import { mapClassNames } from './classMaps';
+import { textClass, measureClass } from './classMaps/text';
 
 export default class Paragraph extends Component {
     render() {
         const {
             children,
-
-            measure,
-            truncate,
-            indent,
-            smallCaps,
-
             className,
         } = this.props;
 
-        const measureClass = (measure || measure === 'normal') ? `measure-${measure}` : 'measure';
-
         const classes = classNames(
             mapClassNames(this.props),
-            {
-                'truncate': truncate,
-                'indent': indent,
-                'small-caps': smallCaps,
-            },
-            measureClass,
+            textClass(this.props),
+            measureClass(this.props),
             className
         );
         return <p className={classes}>{children}</p>;
