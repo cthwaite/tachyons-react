@@ -21,7 +21,7 @@ const textAlignPropType = PropTypes.oneOf([
 
 
 const vertAlignClass = ({vertAlign}, bpSuffix='') => {
-    switch(textAlign) {
+    switch(vertAlign) {
         case 'base':
             return `v-base${bpSuffix}`;
         case 'mid':
