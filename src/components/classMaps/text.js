@@ -7,7 +7,7 @@ const textClass = ({truncate, indent, smallCaps}) => {
 };
 
 const measureClass = ({measure}) => {
-    return (measure || measure === 'normal') ? `measure-${measure}` : 'measure';
+    return measure === 'normal' ? `measure-${measure}` : 'measure';
 };
 
 export { textClass, measureClass };
