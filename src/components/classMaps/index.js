@@ -12,11 +12,11 @@ import { widthClass, maxWidthClass } from './widths';
 import { lineHeightClass } from './lineHeight';
 
 /// Build a mapper from props to tachyons classes.
-const buildPropToClassMap = unravelers => breakpointSuffix => context => {
+const buildPropToClassMap = mappers => breakpointSuffix => context => {
     if(!context) {
         return [];
     }
-    return unravelers.map(mapFunc => mapFunc(context, breakpointSuffix));
+    return mappers.map(mapFunc => mapFunc(context, breakpointSuffix));
 };
 
 const PROP_TO_CLASS_DEFAULTS = [
