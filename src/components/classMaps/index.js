@@ -9,6 +9,7 @@ import { outlineClass } from './outlines';
 import { paddingClass } from './padding';
 import { textAlignClass, vertAlignClass } from './aligns';
 import { widthClass, maxWidthClass } from './widths';
+import { lineHeightClass } from './lineHeight';
 
 /// Build a mapper from props to tachyons classes.
 const buildPropToClassMap = unravelers => breakpointSuffix => context => {
@@ -24,8 +25,9 @@ const PROP_TO_CLASS_DEFAULTS = [
     clearFixClass,
     colorClass,
     floatClass,
-    fontSizeClass,
     fontFamilyClass,
+    fontSizeClass,
+    lineHeightClass,
     marginClass,
     maxWidthClass,
     outlineClass,
