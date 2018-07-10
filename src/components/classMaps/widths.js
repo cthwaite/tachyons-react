@@ -35,10 +35,7 @@ const widthClass = {
                 return `w-${value.slice(0, -1)}${bpSuffix}`;
             }
         }
-    }
-}
-
-const maxWidthClass = {
+    },
     maxWidth: (value, bpSuffix='') => {
         if(typeof value === 'number') {
             return `mw${value}${bpSuffix}`;
@@ -67,7 +64,5 @@ export {
     NAMED_SIZES, PERCENT_SIZES,
     widthClass,
     widthPropType,
-
-    maxWidthClass,
     maxWidthPropType,
 };
