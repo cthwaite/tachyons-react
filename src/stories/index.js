@@ -1,2 +1,2 @@
 import 'tachyons/css/tachyons.min.css';
-export * from './heading';
+export * from './typography';
