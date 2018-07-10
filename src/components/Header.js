@@ -1,22 +1,14 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
-import { mapClassNames } from './classMaps';
-
+import { defaultPartition } from './classMaps';
 
 export default class Header extends Component {
     render() {
-        const {
-            children,
-            className,
-        } = this.props;
-
-        const classes = classNames(
-            mapClassNames(this.props),
-            className
-        );
+        const { children } = this.props;
+        const [classes, restProps] = defaultPartition(this.props);
         return (
-            <header className={classes}>
+            <header {...restProps} className={classes}>
                 {children}
             </header>
         );

@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import { mapClassNames } from './classMaps';
+import { defaultPartition } from './classMaps';
 
 
 class Heading extends Component {
     render() {
         const {
             children,
-            className,
             tag: Tag // JSX tag names must be TitleCase
         } = this.props;
 
-        const classes = classNames(
-            mapClassNames(this.props),
-            className
-        );
+        const [classes, restProps] = defaultPartition(this.props);
         return (
             // . === React.createElement(Tag, ...);
-            <Tag className={classes}>{children}</Tag>
+            <Tag {...restProps} className={classes}>{children}</Tag>
         );
     }
 }
