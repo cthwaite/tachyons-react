@@ -1,18 +1,25 @@
 import classNames from 'classnames';
 
+import { backgroundClass } from './background';
 import { borderClass } from './borders';
-import { clearFixClass, clearClass } from './clear';
+import { boxShadowClass } from './boxShadow';
+import { clearClass } from './clear';
 import { colorClass } from './colors';
+import { debugClass } from './debug';
+import { displayClass } from './display';
+import { flexClass } from './flexbox';
 import { floatClass } from './floats';
-import { fontFamilyClass } from './fontFamily';
-import { fontSizeClass } from './fontSize';
+import { formsClass } from './forms';
+import { heightClass } from './heights';
+import { hoverClass } from './hovers';
 import { marginClass } from './margin';
+import { opacityClass } from './opacity';
 import { outlineClass } from './outlines';
 import { paddingClass } from './padding';
-import { textAlignClass, vertAlignClass } from './aligns';
-import { widthClass, maxWidthClass } from './widths';
-import { textClass, measureClass } from './text';
-import { lineHeightClass } from './lineHeight';
+import { typographyClass } from './typography';
+import { vertAlignClass } from './aligns';
+import { widthClass } from './widths';
+import { zIndexClass } from './zIndex';
 
 import { partition } from './utility';
 
@@ -20,17 +27,17 @@ import { partition } from './utility';
 const buildPropToClassMap = propMap => {
     const mapToClasses = (obj, breakpointSuffix) => (
         Object.entries(obj)
-            .map(([key, value]) => newMapper[key](value, breakpointSuffix))
+        .map(([key, value]) => newMapper[key](value, breakpointSuffix))
     );
     const newMapper = {};
     for(const key of Object.keys(propMap)) {
         newMapper[key] = propMap[key];
     }
     /// Recursively map breakpoint properties. 'value' here is an object.
-    newMapper['notSmall'] = value =>  mapToClasses(value, '-ns'),
+    newMapper['notSmall'] = value =>  mapToClasses(value, '-ns');
     newMapper['medium'] = value => mapToClasses(value, '-m');
     newMapper['large'] = value => mapToClasses(value, '-l');
-
+    
     return props => {
         if(!props) {
             return;
@@ -41,29 +48,28 @@ const buildPropToClassMap = propMap => {
     };
 };
 
-const debugClass = {
-    debug: () => 'debug'
-};
-
 const PROP_TO_CLASS_DEFAULTS = {
+    ...vertAlignClass,
+    ...backgroundClass,
     ...borderClass,
+    ...boxShadowClass,
     ...clearClass,
-    ...clearFixClass,
     ...colorClass,
     ...debugClass,
+    ...displayClass,
+    ...flexClass,
     ...floatClass,
-    ...fontFamilyClass,
-    ...fontSizeClass,
-    ...lineHeightClass,
+    ...formsClass,
+    ...heightClass,
+    ...hoverClass,
     ...marginClass,
-    ...maxWidthClass,
+    ...opacityClass,
     ...outlineClass,
     ...paddingClass,
-    ...textAlignClass,
-    ...textClass,
-    ...measureClass,
+    ...typographyClass,
     ...vertAlignClass,
     ...widthClass,
+    ...zIndexClass,
 };
 
 /// Default mapping between props and tachyons classes, using PROP_TO_CLASS_DEFAULTS.
@@ -80,6 +86,9 @@ const partitionToClasses = classMapper => (props, extra) => {
 const defaultPartition = partitionToClasses(mapAllClassNames);
 
 export {
+    PROP_TO_CLASS_DEFAULTS,
+    DEFAULT_PROP_KEYS,
+    
     buildPropToClassMap,
     mapAllClassNames,
     defaultPartition
