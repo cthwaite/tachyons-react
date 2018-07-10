@@ -17,6 +17,7 @@ const typographyClass = {
                 return;
         }
     },
+    bold: (_, bpSuffix='') => `bold${bpSuffix}`,
 
     // line-height
     lineHeight: (value, bpSuffix='') => `lh-${value}${bpSuffix}`,
@@ -74,6 +75,8 @@ const typographyClass = {
         }
         return `f${value}${bpSuffix}`;
     },
+    headline: (_, bpSuffix='') => `f-headline${bpSuffix}`,
+    subheadline: (_, bpSuffix='') => `f-subheadline${bpSuffix}`,
 
     // typography.css
     measure: (measure, bpSuffix='') => {
