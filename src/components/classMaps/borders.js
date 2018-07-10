@@ -2,7 +2,11 @@ import PropTypes from 'prop-types';
 import { buildEdgeMap, edgeWidthPropType } from './edges';
 
 const borderClassKeys = {
-    ...buildEdgeMap('b'),
+    all: (_, bpSuffix='') => `ba${bpSuffix}`,
+    left: (_, bpSuffix='') => `bl${bpSuffix}`,
+    right: (_, bpSuffix='') => `br${bpSuffix}`,
+    top: (_, bpSuffix='') => `bt${bpSuffix}`,
+    bottom: (_, bpSuffix='') => `bb${bpSuffix}`,
     color: value => `b--${value}`,
     radius: (value, bpSuffix='') => {
         if(typeof value === 'number') {
