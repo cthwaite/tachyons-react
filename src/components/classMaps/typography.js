@@ -67,7 +67,13 @@ const typographyClass = {
     },
     
     // type-scale
-    fontSize: (value, bpSuffix='') => `f${value}${bpSuffix}`,
+    fontSize: (value, bpSuffix='') => {
+        console.log('fontSize: ', value);
+        if(typeof value === 'string') {
+            return `f-${value}${bpSuffix}`;
+        }
+        return `f${value}${bpSuffix}`;
+    },
 
     // typography.css
     measure: (measure, bpSuffix='') => {
