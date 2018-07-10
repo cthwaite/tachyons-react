@@ -14,7 +14,7 @@ export const buildEdgeMap = prefix => {
     const mapObj = {};
     const mapKeys = EDGE_KEYS.map(key => [key, `${prefix}${key[0]}`]);
     for(const [key, classKey] of mapKeys) {
-        mapObj[key] = (value, suffix) => `${classKey}${value}${suffix}`;
+        mapObj[key] = (value, suffix='') => `${classKey}${value}${suffix}`;
     }
     return mapObj;
 };
