@@ -1,23 +1,33 @@
 import PropTypes from 'prop-types';
 
+const mapFontSize = (value, bpSuffix='') => {
+    console.log('fontSize: ', value);
+    if(typeof value === 'string') {
+        return `f-${value}${bpSuffix}`;
+    }
+    return `f${value}${bpSuffix}`;
+};
+
+const mapFontWeight = (value, bpSuffix='') => {
+    if(typeof value === 'number') {
+        return `fw${value}${bpSuffix}`;
+    }
+    switch(value) {
+        case 'normal':
+            return `normal${bpSuffix}`;
+        case 'bold':
+            return `b${bpSuffix}`;
+        default:
+            return;
+    }
+};
+
 const typographyClass = {
     // font-family
     fontFamily: value => value,
     fontStyle: (value, bpSuffix='') => value === 'italic' ? `i${bpSuffix}` : `fs-normal${bpSuffix}`,
-    fontWeight: (value, bpSuffix='') => {
-        if(typeof value === 'number') {
-            return `fw${value}${bpSuffix}`;
-        }
-        switch(value) {
-            case 'normal':
-                return `normal${bpSuffix}`;
-            case 'bold':
-                return `b${bpSuffix}`;
-            default:
-                return;
-        }
-    },
-    bold: (_, bpSuffix='') => `bold${bpSuffix}`,
+    fontWeight: mapFontWeight,
+    fw: mapFontWeight,
 
     // line-height
     lineHeight: (value, bpSuffix='') => `lh-${value}${bpSuffix}`,
@@ -68,13 +78,8 @@ const typographyClass = {
     },
     
     // type-scale
-    fontSize: (value, bpSuffix='') => {
-        console.log('fontSize: ', value);
-        if(typeof value === 'string') {
-            return `f-${value}${bpSuffix}`;
-        }
-        return `f${value}${bpSuffix}`;
-    },
+    fontSize: mapFontSize,
+    f: mapFontSize,
     headline: (_, bpSuffix='') => `f-headline${bpSuffix}`,
     subheadline: (_, bpSuffix='') => `f-subheadline${bpSuffix}`,
 
