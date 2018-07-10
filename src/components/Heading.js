@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { defaultPartition } from './classMaps';
 
 
-class Heading extends Component {
+export default class Heading extends Component {
     render() {
         const {
             children,
@@ -16,6 +16,8 @@ class Heading extends Component {
             <Tag {...restProps} className={classes}>{children}</Tag>
         );
     }
-}
+};
 
-export default Heading;
+Heading.defaultProps = {
+    tag: 'h1'
+};
