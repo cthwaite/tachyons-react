@@ -3,7 +3,7 @@ import { buildEdgeMap, edgePropTypes } from './edges';
 const marginClassKeys = buildEdgeMap('m');
 
 const marginClass = {
-    marginClass: (value, bpSuffix='') => {
+    margin: (value, bpSuffix='') => {
         if(typeof value === 'number') {
             return `ma${value}${bpSuffix}`;
         }
