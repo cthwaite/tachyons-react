@@ -19,15 +19,17 @@ export const buildEdgeMap = prefix => {
     return mapObj;
 };
 
-export const edgePropType = PropTypes.oneOfType([
+export const edgeWidthPropType = {
+    all: PropTypes.number,
+    horizontal: PropTypes.number,
+    vertical: PropTypes.number,
+    top: PropTypes.number,
+    right: PropTypes.number,
+    bottom: PropTypes.number,
+    left: PropTypes.number,
+};
+
+export const edgePropTypes = PropTypes.oneOfType([
     PropTypes.number,
-    PropTypes.shape({
-        all: PropTypes.number,
-        horizontal: PropTypes.number,
-        vertical: PropTypes.number,
-        top: PropTypes.number,
-        right: PropTypes.number,
-        bottom: PropTypes.number,
-        left: PropTypes.number,
-    })
+    PropTypes.shape(edgeWidthPropType),
 ]);

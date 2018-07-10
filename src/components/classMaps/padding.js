@@ -1,4 +1,4 @@
-import { buildEdgeMap, edgePropType } from './edges';
+import { buildEdgeMap, edgePropTypes } from './edges';
 
 const paddingClassKeys = buildEdgeMap('p');
 
@@ -14,6 +14,6 @@ const paddingClass = {
     }
 };
 
-const paddingPropType = edgePropType;
+const paddingPropType = edgePropTypes;
 
 export { paddingClass, paddingPropType };

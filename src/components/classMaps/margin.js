@@ -1,4 +1,4 @@
-import { buildEdgeMap, edgePropType } from './edges';
+import { buildEdgeMap, edgePropTypes } from './edges';
 
 const marginClassKeys = buildEdgeMap('m');
 
@@ -14,6 +14,6 @@ const marginClass = {
     }
 };
 
-const marginPropType = edgePropType;
+const marginPropType = edgePropTypes;
 
 export { marginClass, marginPropType };
