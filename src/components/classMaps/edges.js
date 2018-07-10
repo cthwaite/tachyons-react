@@ -19,6 +19,16 @@ export const buildEdgeMap = prefix => {
     return mapObj;
 };
 
+export const buildEdgeShortMap = prefix => {
+    const mapKeys = EDGE_KEYS.map(key => [`${prefix}${key[0]}`, `${prefix}${key[0]}`]);
+    const mapObj = {};
+    for(const [key, classKey] of mapKeys) {
+        mapObj[key] = (value, suffix='') => `${classKey}${value}${suffix}`;
+    }
+    console.log(mapObj);
+    return mapObj;
+}
+
 export const edgeWidthPropType = {
     all: PropTypes.number,
     horizontal: PropTypes.number,
