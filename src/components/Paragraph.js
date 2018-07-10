@@ -16,4 +16,5 @@ Paragraph.propTypes = {
 
 Paragraph.defaultProps = {
     textAlign: 'left',
+    lineHeight: 'copy',
 };
