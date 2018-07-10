@@ -34,10 +34,12 @@ const borderClass = {
         if(typeof value === 'number') {
             return `ba${value}${bpSuffix}`;
         }
-
-        return Object.keys(value).filter(key => key in borderClassKeys).map(key => {
-            return borderClassKeys[key](value[key], bpSuffix);
-        });
+        if(typeof value === 'string') {
+            return borderClassKeys[value]('');
+        }
+        return Object.keys(value)
+            .filter(key => key in borderClassKeys)
+            .map(key =>  borderClassKeys[key](value[key], bpSuffix));
     }
 };
 
