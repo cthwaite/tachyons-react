@@ -2,17 +2,16 @@ import { buildEdgeMap, edgePropType } from './edges';
 
 const marginClassKeys = buildEdgeMap('m');
 
-const marginClass = ({margin}, bpSuffix='') => {
-    if(!margin) {
-        return;
-    }
-    if(typeof margin === 'number') {
-        return `ma${margin}${bpSuffix}`;
-    }
+const marginClass = {
+    marginClass: (value, bpSuffix='') => {
+        if(typeof value === 'number') {
+            return `ma${value}${bpSuffix}`;
+        }
 
-    return Object.keys(margin).filter(key => key in marginClassKeys).map(key => {
-        return marginClassKeys[key](margin[key], bpSuffix);
-    });
+        return Object.keys(value).filter(key => key in marginClassKeys).map(key => {
+            return marginClassKeys[key](value[key], bpSuffix);
+        });
+    }
 };
 
 const marginPropType = edgePropType;

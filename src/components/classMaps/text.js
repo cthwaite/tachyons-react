@@ -1,13 +1,11 @@
-const textClass = ({truncate, indent, smallCaps}) => {
-    return {
-        'truncate': truncate,
-        'indent': indent,
-        'small-caps': smallCaps,
-    };
+const textClass = {
+    truncate: () => 'truncate',
+    indent: () => 'indent',
+    smallCaps: () => 'small-caps'
 };
 
-const measureClass = ({measure}) => {
-    return measure === 'normal' ? `measure-${measure}` : 'measure';
+const measureClass = {
+    measure: measure => measure === 'normal' ? `measure-${measure}` : 'measure',
 };
 
 export { textClass, measureClass };

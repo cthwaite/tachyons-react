@@ -3,7 +3,7 @@
 const partition = (obj, splitter) => {
     const have = {};
     const haveNot = {};
-    Object.keys(Obj)
+    Object.keys(obj)
         .forEach(k => {
             if(splitter.hasOwnProperty(k)) {
                 have[k] = obj[k];
@@ -18,7 +18,7 @@ const partition = (obj, splitter) => {
 /// Remove properties from an object by key, assigning them to a new object.
 const takeKeys = (obj, keys) => {
     const ret = {};
-    Object.keys(Obj)
+    Object.keys(obj)
         .filter(k => keys.hasOwnProperty(k))
         .forEach(k => {
             ret[k] = obj[k];

@@ -1,9 +1,6 @@
 
-const fontSizeClass = ({fontSize}, bpSuffix) => {
-    if(!fontSize) {
-        return;
-    }
-    return `f${fontSize}${bpSuffix}`;
+const fontSizeClass = {
+    fontSize: (value, bpSuffix='') => `f${value}${bpSuffix}`,
 };
 
 export { fontSizeClass };

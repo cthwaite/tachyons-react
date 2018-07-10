@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 
-
-const colorClass = ({color}) => color ? `${color}` : null;
-const bgColorClass = ({bgColor}) => bgColor ? `bg-${bgColor}` : null;
+const colorClass = {
+    color: value => value ? `${value}` : null,
+    bgColor: value => value ? `bg-${value}` : null,
+};
 
 const colorPropType = PropTypes.string;
 
-export { colorClass, bgColorClass, colorPropType };
+export { colorClass, colorPropType };

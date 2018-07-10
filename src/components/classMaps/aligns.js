@@ -1,17 +1,19 @@
 import PropTypes from 'prop-types';
 
-const textAlignClass = ({textAlign}, bpSuffix='') => {
-    switch(textAlign) {
-        case 'left':
-            return `tl${bpSuffix}`;
-        case 'right':
-            return `tr${bpSuffix}`;
-        case 'center':
-            return `tc${bpSuffix}`;
-        case 'justify':
-            return `tj${bpSuffix}`;
-        default:
-            return;
+const textAlignClass = {
+    textAlign: (value, bpSuffix='') => {
+        switch(value) {
+            case 'left':
+                return `tl${bpSuffix}`;
+            case 'right':
+                return `tr${bpSuffix}`;
+            case 'center':
+                return `tc${bpSuffix}`;
+            case 'justify':
+                return `tj${bpSuffix}`;
+            default:
+                return;
+        }
     }
 };
 
@@ -20,18 +22,20 @@ const textAlignPropType = PropTypes.oneOf([
 ]);
 
 
-const vertAlignClass = ({vertAlign}, bpSuffix='') => {
-    switch(vertAlign) {
-        case 'base':
-            return `v-base${bpSuffix}`;
-        case 'mid':
-            return `v-mid${bpSuffix}`;
-        case 'top':
-            return `v-top${bpSuffix}`;
-        case 'bottom':
-            return `v-btm${bpSuffix}`;
-        default:
-            return;
+const vertAlignClass = {
+    vertAlign: (value, bpSuffix='') => {
+        switch(value) {
+            case 'base':
+                return `v-base${bpSuffix}`;
+            case 'mid':
+                return `v-mid${bpSuffix}`;
+            case 'top':
+                return `v-top${bpSuffix}`;
+            case 'bottom':
+                return `v-btm${bpSuffix}`;
+            default:
+                return;
+        }
     }
 };
 

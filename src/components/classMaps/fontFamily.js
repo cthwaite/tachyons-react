@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 
-const fontFamilyClass = ({fontFamily}) => fontFamily;
+const fontFamilyClass = {
+    fontFamily: value => value,
+};
+
 const fontFamilyPropType = PropTypes.oneOf([
     /* FONT FAMILY GROUPS */
     'sans-serif',

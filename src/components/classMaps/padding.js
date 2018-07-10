@@ -2,17 +2,16 @@ import { buildEdgeMap, edgePropType } from './edges';
 
 const paddingClassKeys = buildEdgeMap('p');
 
-const paddingClass = ({padding}, bpSuffix='') => {
-    if(!padding) {
-        return;
-    }
-    if(typeof padding === 'number') {
-        return `pa${padding}${bpSuffix}`;
-    }
+const paddingClass = {
+    padding: (value, bpSuffix='') => {
+        if(typeof value === 'number') {
+            return `pa${value}${bpSuffix}`;
+        }
 
-    return Object.keys(padding).filter(key => key in paddingClassKeys).map(key => {
-        return paddingClassKeys[key](padding[key], bpSuffix);
-    });
+        return Object.keys(value).filter(key => key in paddingClassKeys).map(key => {
+            return paddingClassKeys[key](value[key], bpSuffix);
+        });
+    }
 };
 
 const paddingPropType = edgePropType;

@@ -23,28 +23,32 @@ const NAMED_SIZES = [
     'auto'
 ];
 
-const widthClass = ({width}={}, bpSuffix='') => {
-    if(typeof width === 'number') {
-        return `w${width}${bpSuffix}`;
-    }
-    else if(typeof width === 'string') {
-        if(NAMED_SIZES.includes(width)) {
-            return `w-${width}${bpSuffix}`;
-        } else {
-            return `w-${width.slice(0, -1)}${bpSuffix}`;
+const widthClass = {
+    width: (value, bpSuffix='') => {
+        if(typeof value === 'number') {
+            return `w${value}${bpSuffix}`;
+        }
+        else if(typeof value === 'string') {
+            if(NAMED_SIZES.includes(value)) {
+                return `w-${value}${bpSuffix}`;
+            } else {
+                return `w-${value.slice(0, -1)}${bpSuffix}`;
+            }
         }
     }
-};
+}
 
-const maxWidthClass = ({maxWidth}={}, bpSuffix='') => {
-    if(typeof maxWidth === 'number') {
-        return `mw${maxWidth}${bpSuffix}`;
-    }
-    else if(maxWidth === '100%') {
-        return `mw-100${bpSuffix}`;
-    }
-    else if(maxWidth === 'none') {
-        return `mw-none${bpSuffix}`;
+const maxWidthClass = {
+    maxWidth: (value, bpSuffix='') => {
+        if(typeof value === 'number') {
+            return `mw${value}${bpSuffix}`;
+        }
+        else if(value === '100%') {
+            return `mw-100${bpSuffix}`;
+        }
+        else if(value === 'none') {
+            return `mw-none${bpSuffix}`;
+        }
     }
 };
 

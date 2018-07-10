@@ -1,15 +1,17 @@
 import PropTypes from 'prop-types';
 
-const whiteSpaceClass = ({ whiteSpace }, bpSuffix='') => {
-    switch(whiteSpace) {
-        case 'normal':
-            return `ws-normal${bpSuffix}`;
-        case 'no-wrap':
-            return `nowrap${bpSuffix}`;
-        case 'pre':
-            return `pre${bpSuffix}`;
-        default:
-            return;
+const whiteSpaceClass = {
+    whiteSpace: (value, bpSuffix='') => {
+        switch(whiteSpace) {
+            case 'normal':
+                return `ws-normal${bpSuffix}`;
+            case 'no-wrap':
+                return `nowrap${bpSuffix}`;
+            case 'pre':
+                return `pre${bpSuffix}`;
+            default:
+                return;
+        }
     }
 };
 
