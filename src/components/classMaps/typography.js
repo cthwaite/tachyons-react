@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
 const mapFontSize = (value, bpSuffix='') => {
-    console.log('fontSize: ', value);
     if(typeof value === 'string') {
         return `f-${value}${bpSuffix}`;
     }
