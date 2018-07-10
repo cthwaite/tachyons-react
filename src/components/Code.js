@@ -8,7 +8,7 @@ export default class Code extends Component {
         const { children } = this.props;
         const [ classes, restProps ] = defaultPartition(this.props, 'pre');
         return (
-            <code {...restProps}>
+            <code {...restProps} className={classes}>
                 {children}
             </code>
         );
