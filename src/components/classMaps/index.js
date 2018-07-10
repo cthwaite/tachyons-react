@@ -71,10 +71,10 @@ const mapAllClassNames = buildPropToClassMap(PROP_TO_CLASS_DEFAULTS);
 const DEFAULT_PROP_KEYS = Array.from(Object.keys(PROP_TO_CLASS_DEFAULTS));
 
 /// Return a function transforming the passed 'props' into a string of classes and a list of restprops.
-const partitionToClasses = classMapper => props => {
+const partitionToClasses = classMapper => (props, extra) => {
     const { className } = props;
     const [derivedClasses, restProps] = classMapper(props);
-    return [classNames(derivedClasses, className), restProps];
+    return [classNames(derivedClasses, className, extra), restProps];
 };
 
 const defaultPartition = partitionToClasses(mapAllClassNames);
