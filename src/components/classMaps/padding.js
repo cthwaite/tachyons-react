@@ -1,4 +1,4 @@
-import { buildEdgeMap, edgePropTypes } from './edges';
+import { buildEdgeMap, buildEdgeShortMap, edgePropTypes } from './edges';
 
 const paddingClassKeys = buildEdgeMap('p');
 
@@ -11,7 +11,8 @@ const paddingClass = {
         return Object.keys(value).filter(key => key in paddingClassKeys).map(key => {
             return paddingClassKeys[key](value[key], bpSuffix);
         });
-    }
+    },
+    ...buildEdgeShortMap('p')
 };
 
 const paddingPropType = edgePropTypes;
