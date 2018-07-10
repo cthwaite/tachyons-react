@@ -19,5 +19,6 @@ export default class Heading extends Component {
 };
 
 Heading.defaultProps = {
-    tag: 'h1'
+    tag: 'h1',
+    fontWeight: 'normal'
 };
