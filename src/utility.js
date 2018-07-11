@@ -16,3 +16,14 @@ export const mapToClassName = (propObj, extra) => {
     const [derivedClasses, _] = mapAllClassNames(propObj);
     return classNames(derivedClasses, extra);
 };
+
+/// Return a copy of the passed object with all keys except those in the passed list.
+export const keysExcept = (propObj, except) => {
+    const newObj = {};
+    Object.keys(propObj)
+        .filter(key => !except.includes(key))
+        .forEach(key => {
+            newObj[key] = propObj[key];
+        });
+    return newObj;
+};
