@@ -85,11 +85,16 @@ const partitionToClasses = classMapper => (props, extra) => {
 
 const defaultPartition = partitionToClasses(mapAllClassNames);
 
+const mappingToPartition = mapping => {
+    return partitionToClasses(buildPropToClassMap(mapping))
+};
+
 export {
     PROP_TO_CLASS_DEFAULTS,
     DEFAULT_PROP_KEYS,
     
     buildPropToClassMap,
     mapAllClassNames,
-    defaultPartition
+    defaultPartition,
+    mappingToPartition
 };
