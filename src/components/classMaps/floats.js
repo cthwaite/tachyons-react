@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const floatClass = {
-    floats: (value, bpSuffix='') => {
+    float: (value, bpSuffix='') => {
         switch (value) {
             case 'left':
                 return `fl${bpSuffix}`;
