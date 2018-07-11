@@ -6,7 +6,8 @@ import { bakeClasses } from '../utility';
 import Code from '../components/Code';
 import Container from '../components/Container';
 import Heading from '../components/Heading';
-import Paragraph from '../components/Paragraph';
+import Measure from '../components/Measure';
+import Text from '../components/Text';
 import { Header } from 'glamorous';
 
 
@@ -68,14 +69,14 @@ typographyStory.add('Subheadline', () => (
 ));
 
 typographyStory
-    .add('Paragraph', () => (
+    .add('Text', () => (
         <Container width='100%' fontFamily='sans-serif'>
             <Container color='black-70' fontFamily='sans-serif' maxWidth={9} ph={5}>
-                <Paragraph >
+                <Text>
                     Lorem ipsum dolor sit amet, nec in putent omittam sadipscing. At cum ridens possit aliquando.
                     Sea simul offendit sententiae eu. Affert mucius volumus qui id, convenire sapientem vis cu.
                     Et solum illud cotidieque cum. Nec ea habeo temporibus, exerci nostrum sensibus no sit.
-                </Paragraph>
+                </Text>
             </Container>
         </Container>
 ));
@@ -85,16 +86,16 @@ typographyStory
     .add('Measure', () => (
         <Container color='black-70' padding={{ pb: 5, ph: 5 }} mt={3} notSmall={{ ph: 5, mb: 5, pb: 5, pt: 0 }}>
         <Container fontFamily='sans-serif' float='left' width='100%' mb={4}>
-            <Paragraph measure f={4}>
+            <Measure f={4}>
             Measure refers to the length of a line of text. It is one of the most important aspects of readability.
-            </Paragraph>
-            <Paragraph measure f={5} fontFamily='athelas' pl={4} border={{ left: true, color: 'black-40'}}>
+            </Measure>
+            <Measure f={5} fontFamily='athelas' pl={4} border={{ left: true, color: 'black-40'}}>
             “Anything from 45 to 75 characters is widely regarded as a satisfactory length of line for a single-column page… the 66-character line (counting both letters and spaces) is widely regarded as ideal. For multiple-column work, a better average is 40-50 characters.”
             <span class="db f6 mt4">&mdash;Robert Bringhurst, <cite>The Elements of Typographic Style</cite></span>
-            </Paragraph>
-            <Paragraph measure f={5} mt={4} mb={2}>
+            </Measure>
+            <Measure f={5} mt={4} mb={2}>
                 tachyons-react provides 3 props for setting measure.
-            </Paragraph>
+            </Measure>
             <Code f={6} mt={0}>
                 measure &mdash; line lengths ~66 characters{'\n'}
                 measure='narrow' &mdash; line lengths ~45 characters{'\n'}
