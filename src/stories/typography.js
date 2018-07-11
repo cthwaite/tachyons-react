@@ -3,12 +3,12 @@ import { storiesOf } from '@storybook/react';
 
 import { bakeClasses } from '../utility';
 
+import Article from '../components/Article';
 import Code from '../components/Code';
 import Container from '../components/Container';
 import Heading from '../components/Heading';
 import Measure from '../components/Measure';
 import Text from '../components/Text';
-import { Header } from 'glamorous';
 
 
 const DescHead = bakeClasses(Heading, {
@@ -125,3 +125,24 @@ typographyStory
         </Container>
     </Container>
     ));
+
+typographyStory.add('Scale', () => (
+    <Article clearFix ph={3} notSmall={{ ph: 5 }} fontFamily='sans-serif' color='black-70' bgColor='white'>
+        <Container float='left' width='100%' large={{ width: '50%', pr: 4 }}>
+            <Heading width='100%' tag='h3' >Type Scale</Heading>
+        </Container>
+        <Container float='left' width='100%' large={{ width: '50%' }} pt={4}>
+            <Text float='left' width='100%'>
+                Often times, websites devote a non-trivial amount of css to setting font-size.
+                They declare an unnecessary amount of different font-sizes that upon inspection,
+                don’t come close to resembling a sane type scale.
+            </Text>
+            <Text className='fl w-100 w-50-ns v-top f5 f6-ns lh-copy pr2-ns'>
+            To create and design an easily readable interface, you don’t need more than 40 font-sizes. A simple ratio-based scale with 8 options should suffice. Using the class extension namespaces you can set the font-size for any particular breakpoint that you desire.
+            </Text>
+            <Text className='fl w-100 w-50-ns measure measure-narrow-ns v-top f5 f6-ns lh-copy pl2-ns'>
+            Don’t spend time constantly overriding font-sizes in your css. If you don’t like a default font-size for an element, use the utilities to quickly make the text larger or smaller until it looks just right.
+            </Text>
+        </Container>
+    </Article>
+));
