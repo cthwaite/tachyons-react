@@ -25,7 +25,6 @@ export const buildEdgeShortMap = prefix => {
     for(const [key, classKey] of mapKeys) {
         mapObj[key] = (value, suffix='') => `${classKey}${value}${suffix}`;
     }
-    console.log(mapObj);
     return mapObj;
 }
 
