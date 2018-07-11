@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { defaultPartition } from './classMaps';
 import { typographyPropType } from './classMaps/typography';
 
-export default class Paragraph extends Component {
+export default class Text extends Component {
     render() {
         const { children } = this.props;
         const [classes, restProps] = defaultPartition(this.props);
@@ -10,11 +10,11 @@ export default class Paragraph extends Component {
     }
 };
 
-Paragraph.propTypes = {
+Text.propTypes = {
     ...typographyPropType
 };
 
-Paragraph.defaultProps = {
+Text.defaultProps = {
     textAlign: 'left',
     lineHeight: 'copy',
 };
