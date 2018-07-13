@@ -6,7 +6,7 @@ import Article from './components/Article';
 import Code from './components/Code';
 import Container from './components/Container';
 import Heading from './components/Heading';
-import Paragraph from './components/Paragraph';
+import Text from './components/Text';
 import Section from './components/Section';
 
 
@@ -72,9 +72,9 @@ export default class App extends Component {
                 <Article padding={3} notSmall={{ padding: { horizontal: 5 }}}>
                     <Heading tag='h3' fontSize={6} className='ttu tracked mt0'>Grids</Heading>
                     <div>
-                        <Paragraph measure fontSize={5} notSmall={{ fontSize: 4 }} lineHeight='copy'>
+                        <Text measure fontSize={5} notSmall={{ fontSize: 4 }} lineHeight='copy'>
                             You can combine display, float, padding, and widths to construct a wide variety of grids. Here is a basic example of some options for constructing a simple grid.
-                        </Paragraph>
+                        </Text>
                     </div>
                 </Article>
                 <MainContainer>
