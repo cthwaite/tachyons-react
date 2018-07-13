@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 
+import { aspectRatioClass } from './aspectRatios';
 import { backgroundClass } from './background';
 import { borderClass } from './borders';
 import { boxShadowClass } from './boxShadow';
@@ -50,6 +51,7 @@ const buildPropToClassMap = propMap => {
 
 const PROP_TO_CLASS_DEFAULTS = {
     ...vertAlignClass,
+    ...aspectRatioClass,
     ...backgroundClass,
     ...borderClass,
     ...boxShadowClass,
