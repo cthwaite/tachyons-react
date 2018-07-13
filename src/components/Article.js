@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import classNames from 'classnames';
-
 import { defaultPartition } from './classMaps';
+
 
 export default class Article extends Component {
     render() {
@@ -14,3 +13,4 @@ export default class Article extends Component {
         );
     }
 }
+
