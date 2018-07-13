@@ -26,7 +26,11 @@ import { zIndexClass } from './zIndex';
 
 import { partition } from './utility';
 
-/// Build a mapper from props to tachyons classes.
+
+/**
+ * Build a mapper from props to Tachyons classes.
+ * @param {object} propMap 
+ */
 const buildPropToClassMap = propMap => {
     const mapToClasses = (obj, breakpointSuffix) => (
         Object.entries(obj)
