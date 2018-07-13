@@ -52,7 +52,6 @@ const buildPropToClassMap = propMap => {
 };
 
 const PROP_TO_CLASS_DEFAULTS = {
-    ...vertAlignClass,
     ...aspectRatioClass,
     ...backgroundClass,
     ...borderClass,
@@ -74,6 +73,7 @@ const PROP_TO_CLASS_DEFAULTS = {
     ...paddingClass,
     ...typographyClass,
     ...vertAlignClass,
+    ...vertAlignClass,
     ...widthClass,
     ...zIndexClass,
 };
@@ -83,16 +83,40 @@ const mapAllClassNames = buildPropToClassMap(PROP_TO_CLASS_DEFAULTS);
 const DEFAULT_PROP_KEYS = Array.from(Object.keys(PROP_TO_CLASS_DEFAULTS));
 
 /// Return a function transforming the passed 'props' into a string of classes and a list of restprops.
+
+/**
+ * Produce a prop-to-class mapper using the passed class mapper.
+ * @param {function} classMapper - The class mapping function to use.
+ * @returns {function} A function that maps React properties to a className string.
+ */
 const partitionToClasses = classMapper => (props, extra) => {
     const { className } = props;
     const [derivedClasses, restProps] = classMapper(props);
     return [classNames(derivedClasses, className, extra), restProps];
 };
 
+/**
+ * Map React props to Tachyons classes.
+ * @param {object} props - React properties.
+ * @param {*} extra - Extra class names, as a string, array, or object to be passed to
+ * the classNames function.
+ * @returns {Array} An array containing two elements: a className string, and an
+ * object containing all non-class props.
+ */
 const defaultPartition = partitionToClasses(mapAllClassNames);
 
 const mappingToPartition = mapping => {
     return partitionToClasses(buildPropToClassMap(mapping))
+};
+
+const objectToClasses = classMapper => (obj, extra) => {
+    const { className } = obj;
+    delete obj['className'];
+    return classNames(classMapper(obj), className, extra);
+};
+
+const mappingToClasses = mapping => {
+    return objectToClasses(buildObjToClassMap(mapping))
 };
 
 export {
@@ -102,5 +126,8 @@ export {
     buildPropToClassMap,
     mapAllClassNames,
     defaultPartition,
-    mappingToPartition
+    mappingToPartition,
+
+    objectToClasses,
+    mappingToClasses,
 };
