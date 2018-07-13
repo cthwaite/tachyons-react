@@ -55,6 +55,35 @@ const buildPropToClassMap = propMap => {
     };
 };
 
+
+/**
+ * Build a mapper from an object to Tachyons classes. Unlike buildPropToClassMap, the
+ * mapper returned by this function does NOT filter irrelevant property keys from passed
+ * objects.
+ * @param {object} propMap 
+ */
+const buildObjToClassMap = propMap => {
+    const mapToClasses = (obj, breakpointSuffix) => (
+        Object.entries(obj)
+        .map(([key, value]) => newMapper[key](value, breakpointSuffix))
+    );
+    const newMapper = {};
+    for(const key of Object.keys(propMap)) {
+        newMapper[key] = propMap[key];
+    }
+    /// Recursively map breakpoint properties. 'value' here is an object.
+    newMapper['notSmall'] = value =>  mapToClasses(value, '-ns');
+    newMapper['medium'] = value => mapToClasses(value, '-m');
+    newMapper['large'] = value => mapToClasses(value, '-l');
+    
+    return obj => {
+        if(!obj) {
+            return;
+        }
+        return mapToClasses(obj);
+    };
+};
+
 const PROP_TO_CLASS_DEFAULTS = {
     ...aspectRatioClass,
     ...backgroundClass,
