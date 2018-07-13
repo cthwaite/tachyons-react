@@ -13,6 +13,7 @@ import { floatClass } from './floats';
 import { formsClass } from './forms';
 import { heightClass } from './heights';
 import { hoverClass } from './hovers';
+import { listsClass } from './lists';
 import { marginClass } from './margin';
 import { opacityClass } from './opacity';
 import { outlineClass } from './outlines';
@@ -64,6 +65,7 @@ const PROP_TO_CLASS_DEFAULTS = {
     ...formsClass,
     ...heightClass,
     ...hoverClass,
+    ...listsClass,
     ...marginClass,
     ...opacityClass,
     ...outlineClass,
