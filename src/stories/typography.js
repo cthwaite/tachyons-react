@@ -14,9 +14,8 @@ import Text from '../components/Text';
 const DescHead = bakeClasses(Heading, {
     f:6,
     fw:6,
-    pt:4,
-    mt:2,
-    mb:0,
+    padding: { top: 4 },
+    margin: { top: 2, bottom: 0 },
     tracked: true,
     textTransform: 'uppercase',
     border:'top',
@@ -94,7 +93,7 @@ typographyStory
             <span class="db f6 mt4">&mdash;Robert Bringhurst, <cite>The Elements of Typographic Style</cite></span>
             </Measure>
             <Measure f={5} mt={4} mb={2}>
-                tachyons-react provides 3 props for setting measure.
+                <strong>tachyons-react</strong> provides 3 props for setting measure:
             </Measure>
             <Code f={6} mt={0}>
                 measure &mdash; line lengths ~66 characters{'\n'}
@@ -103,13 +102,13 @@ typographyStory
             </Code>
         </Container>
         <Container color='black-70' fontFamily='sans-serif' maxWidth={9}>
-            <Header f={5} mb={4} pb={2} fontWeight='bold' border='bottom'>Examples</Header>
+            <Heading f={5} mb={2} pb={2} fontWeight='bold'>Examples</Heading>
 
             <DescHead>5rem/80px at 30em</DescHead>
             <Code f={6} mt={3} display='block'>{`<Heading tag='h3' subheadline measure>`}</Code>
             <Heading tag='h3' mt={4} subheadline measure>
                 Designers create hierarchy and contrast by playing with the scale of letterforms.
-            </Heading>
+            </Heading>  
 
             <DescHead>3rem(48px) at 30em</DescHead>
             <Code f={6} mt={3} display='block'>{`<Heading tag='h3' f={1} measure>`}</Code>
@@ -144,5 +143,25 @@ typographyStory.add('Scale', () => (
             Don’t spend time constantly overriding font-sizes in your css. If you don’t like a default font-size for an element, use the utilities to quickly make the text larger or smaller until it looks just right.
             </Text>
         </Container>
+    </Article>
+));
+
+typographyStory.add('Headline Title Text', () => (
+    <Article clearFix ph={3} notSmall={{ ph: 5 }} fontFamily='sans-serif' color='black' bgColor='white'>
+        <Heading fontWeight='bold' f={3} medium={{ f: 1 }} large={{ headline: true }}>
+        Title
+        </Heading>
+        <Measure>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+        vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+        no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </Measure>
+        <Measure>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+        vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+        no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </Measure>
     </Article>
 ));

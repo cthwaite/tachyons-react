@@ -1,4 +1,6 @@
 import React from 'react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
 import Article from './components/Article';
