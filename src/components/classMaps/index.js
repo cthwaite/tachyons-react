@@ -2,7 +2,7 @@ import classNames from 'classnames';
 
 import { aspectRatioClass } from './aspectRatios';
 import { backgroundClass } from './background';
-import { borderClass } from './borders';
+import { borderClass } from './border';
 import { boxShadowClass } from './boxShadow';
 import { clearClass } from './clear';
 import { colorClass } from './colors';

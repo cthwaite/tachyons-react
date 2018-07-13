@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { buildEdgeMap, edgeWidthPropType } from './edges';
+import { edgeWidthPropType } from './edges';
 
 const borderClassKeys = {
     all: (_, bpSuffix='') => `ba${bpSuffix}`,
