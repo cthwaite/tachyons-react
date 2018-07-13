@@ -1,19 +1,19 @@
 const hoverClass = {
-    dim: () => 'dim',
-    glow: () => 'glow',
+    dim: (value) => value ? 'dim' : null,
+    glow: (value) => value ? 'glow' : null,
     
-    hideChild: () => 'hide-child',
+    hideChild: (value) => value ? 'hide-child' : null,
 
-    underlineHover: () => 'underline-hover',
+    underlineHover: (value) => value ? 'underline-hover' : null,
 
-    grow: () => 'grow',
-    growLarge: () => 'grow-large',
+    grow: (value) => value ? 'grow' : null,
+    growLarge: (value) => value ? 'grow-large' : null,
 
-    pointer: () => 'pointer',
+    pointer: (value) => value ? 'pointer' : null,
 
-    shadowHover: () => 'shadow-hover',
+    shadowHover: (value) => value ? 'shadow-hover' : null,
 
-    bgAnimate: () => 'bg-animate',
+    bgAnimate: (value) => value ? 'bg-animate' : null,
 };
 
 export { hoverClass };
