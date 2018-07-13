@@ -8,9 +8,6 @@ export default class Link extends Component {
             children
         } = this.props;
         const [classes, restProps] = defaultPartition(this.props, ['link']);
-        return (
-            // . === React.createElement(Tag, ...);
-            <a {...restProps} className={classes}>{children}</a>
-        );
+        return <a {...restProps} className={classes}>{children}</a>;
     }
 }
