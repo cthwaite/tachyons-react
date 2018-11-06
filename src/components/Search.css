@@ -1,0 +1,20 @@
+.input-plain {
+    width: 100%;
+    border: none;
+    outline: none;
+    color: inherit;
+    background-color: #fff;
+    font: inherit;
+    margin: 0;
+}
+
+.suggestion-list-wrapper {
+    position: relative;
+}
+
+.suggestion-list {
+    width: 100%;
+    background: '#fff' !important;
+    position: absolute;
+    display: block;
+}
